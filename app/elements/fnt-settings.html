@@ -1,0 +1,67 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+
+<script src="../bower_components/written-number/dist/written-number.min.js"></script>
+
+<dom-module id="fnt-settings">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      paper-material {
+        padding: 30px;
+        margin: 10px;
+      }
+      #settings{
+        margin: 10px;
+
+      }
+    </style>
+    <div id="settings">
+      <paper-checkbox id="speakCheckBox" on-change="changeSpeakHandler">speak number</paper-checkbox>
+      <paper-checkbox id="showCheckBox" on-change="changeShowHandler">show number</paper-checkbox>
+      <paper-input label="From" auto-validate pattern="[0-9]*" error-message="numbers only!" value="{{settings.range.from}}"></paper-input>
+      <paper-input label="To" auto-validate pattern="[0-9]*" error-message="numbers only!" value="{{settings.range.to}}"></paper-input>
+      <paper-dropdown-menu label="Language" >
+        <paper-listbox class="dropdown-content" selected="{{settings.lang}}" attr-for-selected="value">
+          <paper-item value="en">English</paper-item>
+          <paper-item value="fr">French</paper-item>
+          <paper-item value="sp">Spanish</paper-item>
+          <paper-item value="pt">Portuguese</paper-item>
+        </paper-listbox>
+      </paper-dropdown-menu>
+    </div>
+  </template>
+
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        is: 'fnt-settings',
+        properties: {
+          settings: {
+            type: Object,
+            notify: true
+          }
+        },
+        ready: function () {
+          this.settings = {name: 'Settings'};
+          this.set('settings.range', {from: 0, to: 10});
+          this.settings.isSpeak = false;
+          this.$.speakCheckBox.checked = this.settings.isSpeak;
+          this.settings.isShow = true;
+          this.$.showCheckBox.checked = this.settings.isShow;
+          this.set('settings.lang', 'en');
+        },
+        changeSpeakHandler: function(){
+          this.set('settings.isSpeak', !this.settings.isSpeak);
+        },
+        changeShowHandler: function(){
+          this.set('settings.isShow', !this.settings.isShow);
+        }
+      });
+    })();
+  </script>
+</dom-module>

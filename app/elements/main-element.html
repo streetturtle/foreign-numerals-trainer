@@ -1,0 +1,52 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+
+
+<dom-module id="main-element">
+  <template>
+    <style>
+      paper-drawer-panel {
+        --paper-drawer-panel-main-container: {
+          background-color: #292929;
+          /*background-image: url('/app/images/random-grey-variations.png')*/
+        };
+        --paper-drawer-panel-drawer-container: {
+          /*background-color: #202020;*/
+          /*background-image: url('/app/images/random-grey-variations.png')*/
+        };
+      }
+    </style>
+    <paper-drawer-panel>
+      <paper-header-panel drawer>
+        <paper-toolbar>
+          <div><iron-icon icon="settings"></iron-icon>settings</div>
+        </paper-toolbar>
+        <fnt-settings settings="{{settings}}"></fnt-settings>
+      </paper-header-panel>
+      <paper-header-panel main>
+        <paper-toolbar>
+          <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+          <div>Foreign Numeral Trainer</div>
+        </paper-toolbar>
+        <fnt-element settings="{{settings}}"></fnt-element>
+      </paper-header-panel>
+    </paper-drawer-panel>
+  </template>
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        is: 'main-element',
+        properties:{
+          settings:{
+            type: Object,
+            notify: true
+          }
+        },
+        ready: function () {}
+      });
+    })();
+  </script>
+
+</dom-module>
