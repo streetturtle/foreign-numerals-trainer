@@ -57,7 +57,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- For shared styles, shared-styles.html import in elements.html -->
   <style is="custom-style" include="shared-styles"></style>
-  <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 
 </head>
 
@@ -69,104 +68,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template is="dom-bind" id="app">
 
     <main-element></main-element>
-
-    <!--<paper-drawer-panel id="paperDrawerPanel" responsive-width="840px">-->
-      <!--&lt;!&ndash; Drawer Scroll Header Panel &ndash;&gt;-->
-      <!--<paper-scroll-header-panel drawer fixed>-->
-
-        <!--&lt;!&ndash; Drawer Toolbar &ndash;&gt;-->
-        <!--<paper-toolbar id="drawerToolbar">-->
-          <!--<span class="menu-name">Menu</span>-->
-        <!--</paper-toolbar>-->
-
-        <!--&lt;!&ndash; Drawer Content &ndash;&gt;-->
-        <!--<paper-menu class="app-menu" attr-for-selected="data-route" selected="[[route]]">-->
-          <!--<a data-route="home" href="{{baseUrl}}">-->
-            <!--<iron-icon icon="home"></iron-icon>-->
-            <!--<span>Home</span>-->
-          <!--</a>-->
-
-          <!--<a data-route="users" href="{{baseUrl}}users">-->
-            <!--<iron-icon icon="info"></iron-icon>-->
-            <!--<span>Users</span>-->
-          <!--</a>-->
-
-          <!--<a data-route="contact" href="{{baseUrl}}contact">-->
-            <!--<iron-icon icon="mail"></iron-icon>-->
-            <!--<span>Contact</span>-->
-          <!--</a>-->
-
-          <!--<a data-route="fnt" href="{{baseUrl}}pasha">-->
-            <!--<iron-icon icon="mail"></iron-icon>-->
-            <!--<span>Pasha</span>-->
-          <!--</a>-->
-        <!--</paper-menu>-->
-
-        <!--<fnt-settings></fnt-settings>-->
-      <!--</paper-scroll-header-panel>-->
-
-      <!--&lt;!&ndash; Main Area &ndash;&gt;-->
-      <!--<paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>-->
-        <!--&lt;!&ndash; Main Toolbar &ndash;&gt;-->
-
-        <!--<paper-toolbar id="mainToolbar" class="tall">-->
-          <!--<paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>-->
-          <!--<span class="space"></span>-->
-          <!--&lt;!&ndash; Application name &ndash;&gt;-->
-          <!--<div class="middle middle-container">-->
-            <!--<div class="app-name">Polymer Starter Kit</div>-->
-          <!--</div>-->
-        <!--</paper-toolbar>-->
-
-        <!--&lt;!&ndash; Main Content &ndash;&gt;-->
-        <!--<div class="content">-->
-          <!--<iron-pages attr-for-selected="data-route" selected="{{route}}">-->
-            <!--<section data-route="home">-->
-              <!--<paper-material elevation="1">-->
-                <!--<my-greeting class="focus-target" tabindex="-1"></my-greeting>-->
-
-                <!--<p class="subhead">You now have:</p>-->
-                <!--<my-list></my-list>-->
-
-                <!--<p>Looking for more Web App layouts? Check out our <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p>-->
-              <!--</paper-material>-->
-
-              <!--<paper-material elevation="1">-->
-                <!--<fnt-element></fnt-element>-->
-              <!--</paper-material>-->
-
-            <!--</section>-->
-
-            <!--<section data-route="users">-->
-              <!--<paper-material elevation="1">-->
-                <!--<h1 class="page-title focus-target" tabindex="-1">Users</h1>-->
-                <!--<p>This is the users section</p>-->
-                <!--<a href$="{{baseUrl}}users/Addy">Addy</a><br>-->
-                <!--<a href$="{{baseUrl}}users/Rob">Rob</a><br>-->
-                <!--<a href$="{{baseUrl}}users/Chuck">Chuck</a><br>-->
-                <!--<a href$="{{baseUrl}}users/Sam">Sam</a>-->
-              <!--</paper-material>-->
-            <!--</section>-->
-
-            <!--<section data-route="user-info">-->
-              <!--<paper-material elevation="1">-->
-                <!--<h1 class="page-title focus-target" tabindex="-1">User: {{params.name}}</h1>-->
-                <!--<div>This is {{params.name}}'s section</div>-->
-              <!--</paper-material>-->
-            <!--</section>-->
-
-            <!--<section data-route="contact">-->
-              <!--<fnt-settings settings="{{settings}}" class="focus-target"></fnt-settings>-->
-            <!--</section>-->
-
-            <!--<section data-route="pasha">-->
-              <!--<fnt-element settings="{{settings}}" class="focus-target"></fnt-element>-->
-            <!--</section>-->
-
-          <!--</iron-pages>-->
-        <!--</div>-->
-      <!--</paper-scroll-header-panel>-->
-    <!--</paper-drawer-panel>-->
 
     <paper-toast id="toast">
       <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
@@ -191,10 +92,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     -->
 
   </template>
-
-  <!-- build:js scripts/app.js -->
-  <!--<script src="scripts/app.js"></script>-->
-  <!-- endbuild-->
 </body>
 
 </html>
