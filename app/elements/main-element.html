@@ -8,13 +8,16 @@
       paper-drawer-panel {
         --paper-drawer-panel-main-container: {
           background-color: #fedc3d;
-        } --paper-drawer-panel-drawer-container: {
-        background-color: #7cdbd5;
+        };
+        --paper-drawer-panel-drawer-container: {
+          background-color: #7cdbd5;
+        };
       }
-      }
-
       paper-toolbar {
         background-color: #000000;
+      }
+      paper-menu{
+        --paper-menu-background-color: #7cdbd5;
       }
 
     </style>
@@ -29,8 +32,8 @@
         </paper-toolbar>
         <fnt-settings settings="{{settings}}"></fnt-settings>
         <paper-menu class="app-menu" attr-for-selected="data-route" selected="{{route}}">
-          <paper-button data-route="home">Home</paper-button>
-          <paper-button data-route="contact">Contact</paper-button>
+          <paper-item data-route="home"><paper-button>Home</paper-button></paper-item>
+          <paper-item data-route="help"><paper-button>Help</paper-button></paper-item>
         </paper-menu>
       </paper-header-panel>
 
@@ -45,11 +48,12 @@
             <section data-route="home">
               <fnt-element class="focus-target" settings="{{settings}}"></fnt-element>
             </section>
-            <section data-route="contact">
-              <paper-material elevation="1">
-                <h1 class="page-title focus-target" tabindex="-1">Contact</h1>
-                <p>This is the contact section</p>
-              </paper-material>
+            <section data-route="help">
+              <help-element lang="[[settings.lang]]"></help-element>
+              <!--<paper-material elevation="1">-->
+                <!--<h1 class="page-title focus-target" tabindex="-1">Contact</h1>-->
+                <!--<p>This is the contact section</p>-->
+              <!--</paper-material>-->
             </section>
           </iron-pages>
         </div>

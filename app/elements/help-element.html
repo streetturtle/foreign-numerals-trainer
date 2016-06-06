@@ -1,0 +1,34 @@
+<dom-module id="help-element">
+  <template>
+    <style>
+      paper-material {
+        padding: 30px;
+        margin: 10px;
+        background-color: #ffffff;
+        text-align: center;
+      }
+    </style>
+    <paper-material elevation="4">
+      <iron-pages attr-for-selected="help-lang" selected="{{lang}}">
+        <div help-lang="en">en</div>
+        <div help-lang="fr">fr</div>
+        <div help-lang="sp">sp</div>
+        <div help-lang="pt">pt</div>
+      </iron-pages>
+    </paper-material>
+  </template>
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        properties: {
+          lang: {
+            type: String,
+            value: 'en'
+          }
+        }
+      });
+    })();
+  </script>
+</dom-module>
