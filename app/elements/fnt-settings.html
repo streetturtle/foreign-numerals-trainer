@@ -11,16 +11,27 @@
         padding: 30px;
         margin: 10px;
       }
+      paper-toggle-button{
+        display: inline-block;
+        float: right;
+      }
       #settings{
         margin: 10px;
-
+      }
+      paper-input{
+        display: inline-block;
+        width: 45%;
       }
     </style>
     <div id="settings">
-      <paper-checkbox id="speakCheckBox" on-change="changeSpeakHandler">speak number</paper-checkbox>
-      <paper-checkbox id="showCheckBox" on-change="changeShowHandler">show number</paper-checkbox>
-      <paper-input label="From" auto-validate pattern="[0-9]*" error-message="numbers only!" value="{{settings.range.from}}"></paper-input>
-      <paper-input label="To" auto-validate pattern="[0-9]*" error-message="numbers only!" value="{{settings.range.to}}"></paper-input>
+      <div style="margin-bottom:10px;">
+        <span>Speak numbers</span>
+        <paper-toggle-button id="speakCheckBox" on-change="changeSpeakHandler"></paper-toggle-button>
+      </div>
+      <div>
+        <span>Show numbers</span>
+        <paper-toggle-button id="showCheckBox" on-change="changeShowHandler"></paper-toggle-button>
+      </div>
       <paper-dropdown-menu label="Language" >
         <paper-listbox class="dropdown-content" selected="{{settings.lang}}" attr-for-selected="value">
           <paper-item value="en">English</paper-item>
@@ -29,6 +40,11 @@
           <paper-item value="pt">Portuguese</paper-item>
         </paper-listbox>
       </paper-dropdown-menu>
+      <div>
+        <paper-input label="From" auto-validate pattern="[0-9]*" error-message="numbers only!" value="{{settings.range.from}}"></paper-input>
+        <paper-input label="To" auto-validate pattern="[0-9]*" error-message="numbers only!" value="{{settings.range.to}}"></paper-input>
+      </div>
+      <app-footer></app-footer>
     </div>
   </template>
 
