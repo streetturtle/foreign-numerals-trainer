@@ -7,19 +7,26 @@
     <style>
       paper-drawer-panel {
         --paper-drawer-panel-main-container: {
-          background-color: #292929;
-          /*background-image: url('/app/images/random-grey-variations.png')*/
-        };
+          background-color: #fedc3d;
+        }
         --paper-drawer-panel-drawer-container: {
-          /*background-color: #202020;*/
-          /*background-image: url('/app/images/random-grey-variations.png')*/
-        };
+        background-color: #7cdbd5;
+        }
       }
+
+      paper-toolbar {
+        background-color: #000000;
+      }
+
     </style>
+
     <paper-drawer-panel>
       <paper-header-panel drawer>
         <paper-toolbar>
-          <div><iron-icon icon="settings"></iron-icon>settings</div>
+          <div>
+            <iron-icon icon="settings"></iron-icon>
+            settings
+          </div>
         </paper-toolbar>
         <fnt-settings settings="{{settings}}"></fnt-settings>
       </paper-header-panel>
@@ -38,13 +45,14 @@
 
       Polymer({
         is: 'main-element',
-        properties:{
-          settings:{
+        properties: {
+          settings: {
             type: Object,
             notify: true
           }
         },
-        ready: function () {}
+        ready: function () {
+        }
       });
     })();
   </script>
