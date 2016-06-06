@@ -8,10 +8,9 @@
       paper-drawer-panel {
         --paper-drawer-panel-main-container: {
           background-color: #fedc3d;
-        }
-        --paper-drawer-panel-drawer-container: {
+        } --paper-drawer-panel-drawer-container: {
         background-color: #7cdbd5;
-        }
+      }
       }
 
       paper-toolbar {
@@ -29,13 +28,32 @@
           </div>
         </paper-toolbar>
         <fnt-settings settings="{{settings}}"></fnt-settings>
+        <paper-menu class="app-menu" attr-for-selected="data-route" selected="{{route}}">
+          <paper-button data-route="home">Home</paper-button>
+          <paper-button data-route="contact">Contact</paper-button>
+        </paper-menu>
       </paper-header-panel>
+
       <paper-header-panel main>
         <paper-toolbar>
           <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
           <div>Foreign Numeral Trainer</div>
         </paper-toolbar>
-        <fnt-element settings="{{settings}}"></fnt-element>
+
+        <div class="content">
+          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+            <section data-route="home">
+              <fnt-element class="focus-target" settings="{{settings}}"></fnt-element>
+            </section>
+            <section data-route="contact">
+              <paper-material elevation="1">
+                <h1 class="page-title focus-target" tabindex="-1">Contact</h1>
+                <p>This is the contact section</p>
+              </paper-material>
+            </section>
+          </iron-pages>
+        </div>
+
       </paper-header-panel>
     </paper-drawer-panel>
   </template>
@@ -49,6 +67,10 @@
           settings: {
             type: Object,
             notify: true
+          },
+          route:{
+            type: String,
+            value: 'home'
           }
         },
         ready: function () {
