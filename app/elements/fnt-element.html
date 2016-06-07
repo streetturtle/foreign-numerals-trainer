@@ -13,33 +13,42 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <dom-module id="fnt-element">
   <template>
-    <style>
+    <style is="custom-style">
       :host {
         display: block;
       }
+
       paper-material {
         padding: 30px;
         margin: 10px;
         background-color: #ffffff;
         text-align: center;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
       }
-      #number{
+
+      #number {
         font-family: Roboto;
         font-size: 3em;
       }
-      paper-input .correct{
-        --paper-input-container-focus-color: green;
+
+      #correctIcon {
+        color: var(--paper-green-500)
       }
     </style>
-
-    <paper-material elevation="4">
-      <div id="number" hidden$="{{!settings.isShow}}">[[number]]</div>
-      <div hidden$="[[!settings.isShowAnswer]]">[[numeral]]</div>
-      <paper-input id="userInputField" on-input="verify" value="{{userInput}}"></paper-input>
-      <voice-player id="player"></voice-player>
-      <paper-button on-tap="_handleShow"><iron-icon icon="help-outline"></iron-icon></paper-button>
-      <paper-button on-tap="speakNumber"><iron-icon icon="record-voice-over"></iron-icon></paper-button>
-    </paper-material>
+    <div style="text-align: center">
+      <paper-material elevation="4">
+        <div id="number" hidden$="{{!settings.isShow}}">[[number]]</div>
+        <div hidden$="[[!settings.isShowAnswer]]">[[numeral]]</div>
+        <paper-input id="userInputField" on-input="verify" value="{{userInput}}">
+          <iron-icon id="correctIcon" icon="check" suffix hidden></iron-icon>
+        </paper-input>
+        <voice-player id="player"></voice-player>
+        <paper-icon-button on-tap="_handleShow" icon="help-outline"></paper-icon-button>
+        <paper-icon-button on-tap="speakNumber" icon="record-voice-over"></paper-icon-button>
+      </paper-material>
+    </div>
   </template>
 
   <script>
@@ -65,30 +74,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           this.number = Math.floor((Math.random() * (this.settings.range.to + 1)) + this.settings.range.from);
           this.numeral = writtenNumber(this.number, {lang: this.settings.lang});
           this.set('settings.isShowAnswer', false);
-          if (this.settings.isSpeak){
+          if (this.settings.isSpeak) {
             this.speakNumber();
           }
         },
 
-        speakNumber: function(){
+        speakNumber: function () {
           this.$.player.text = this.numeral;
           this.$.player.accent = this.settings.lang;
           this.$.player.speak();
         },
 
         verify: function () {
-          if (this.numeral == this.userInput){
+          if (this.numeral == this.userInput) {
             this.$.userInputField.classList.add('correct');
-            this.generateNumber();
-            this.clearUserInput();
+            this.$.correctIcon.hidden = false;
+            var self = this;
+            setTimeout(function () {
+              self.generateNumber();
+              self.clearUserInput();
+              self.$.userInputField.classList.remove('correct');
+              self.$.correctIcon.hidden = true;
+            }, 500);
           }
         },
 
-        clearUserInput: function(){
+        clearUserInput: function () {
           this.userInput = '';
         },
 
-        _handleShow: function(){
+        _handleShow: function () {
           this.set('settings.isShowAnswer', !this.settings.isShowAnswer);
         }
       });

@@ -5,13 +5,190 @@
         padding: 30px;
         margin: 10px;
         background-color: #ffffff;
-        text-align: center;
+        /*text-align: center;*/
       }
+
     </style>
     <paper-material elevation="4">
       <iron-pages attr-for-selected="help-lang" selected="{{lang}}">
         <div help-lang="en">en</div>
-        <div help-lang="fr">fr</div>
+        <div help-lang="fr">
+          <table width="100%" border="0">
+            <tbody>
+            <tr>
+              <td width="45%" valign="top">
+                <h3>Numbers 0-19</h3>
+                <table width="90%" border="0">
+                  <tbody>
+                  <tr>
+                    <td>0</td>
+                    <td><b>zéro</b></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td><b>un</b></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td><b>deux</b></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td><b>trois</b></td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td><b>quatre</b></td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td><b>cinq</b></td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td><b>six</b></td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td><b>sept</b></td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td><b>huit</b></td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td><b>neuf</b></td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td><b>dix</b></td>
+                  </tr>
+                  <tr>
+                    <td>11</td>
+                    <td><b>onze</b></td>
+                  </tr>
+                  <tr>
+                    <td>12</td>
+                    <td><b>douze</b></td>
+                  </tr>
+                  <tr>
+                    <td>13</td>
+                    <td><b>treize</b></td>
+                  </tr>
+                  <tr>
+                    <td>14</td>
+                    <td><b>quatorze</b></td>
+                  </tr>
+                  <tr>
+                    <td>15</td>
+                    <td><b>quinze</b></td>
+                  </tr>
+                  <tr>
+                    <td>16</td>
+                    <td><b>seize</b></td>
+                  </tr>
+                  <tr>
+                    <td>17</td>
+                    <td><b>dix-sept</b></td>
+                  </tr>
+                  <tr>
+                    <td>18</td>
+                    <td><b>dix-huit</b></td>
+                  </tr>
+                  <tr>
+                    <td>19</td>
+                    <td><b>dix-neuf</b></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td width="45%" valign="top">
+                <h3>Numbers 20-69</h3>
+                <p>
+                  The number consists of a word for the multiple of ten plus optionally the number for the
+                  unit 1-9 from the list opposite. Names of the tens:
+                </p>
+                <table width="90%" border="0">
+                  <tbody>
+                  <tr>
+                    <td>20</td>
+                    <td><b>vingt</b></td>
+                  </tr>
+                  <tr>
+                    <td>30</td>
+                    <td><b>trente</b></td>
+                  </tr>
+                  <tr>
+                    <td>40</td>
+                    <td><b>quarante</b></td>
+                  </tr>
+                  <tr>
+                    <td>50</td>
+                    <td><b>cinquante</b></td>
+                  </tr>
+                  <tr>
+                    <td>60</td>
+                    <td><b>soixante</b></td>
+                  </tr>
+                  </tbody>
+                </table>
+                <p>Tens and units are joined with a hyphen. So, 22 = <b>vingt-deux</b>, 45 = <b>quarante-cinq</b> etc.
+                  If the unit is a 1, then the word <b>et</b> is inserted between tens and units: 21 = <b>vingt et
+                    un</b>,
+                  31 = <b>trente et un</b> etc.</p>
+
+                <h3>Numbers 70-79</h3>
+                <p>
+                  These continue on from <b>soixante-neuf</b>: 70 = <b>soixante-dix</b>, 71 = <b>soixante et onze</b>,
+                  72 = <b>soixante-douze</b>, 73 = <b>soixante-treize</b> etc. Notice the <b>et</b> in 71 which mimics
+                  the behaviour of 21, 31 etc.
+                </p>
+
+                <h3>Numbers 80-99</h3>
+                <p>
+                  The French for eighty is <b>quatre-vingts</b>. Numbers 81-99 consist of <b>quatre-vingt-</b> (minus
+                  the <b>-s</b>)
+                  plus a number 1-19: 81 = <b>quatre-vingt-un</b>, 82 = <b>quatre-vingt-deux</b>, 90 = <b>quatre-vingt-dix</b>,
+                  91 = <b>quatre-vingt-onze</b> etc. Notice that none of these numbers use the word <b>et</b>.
+                </p>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <table width="90%" border="0">
+            <tbody>
+            <tr>
+              <td width="45%" valign="top">
+                <h3>Hundreds</h3>
+
+                <p>
+                  The French for '(a) hundred' is <b>cent</b>. Multiples of a hundred go <b>deux cents</b>, <b>trois
+                  cents</b>
+                  etc with an <b>-s</b> on <b>cents</b>. If the number is not an exact multiple of 100, then the number
+                  representing the last two digits follows <b>cent</b>, which loses its <b>-s</b>: 101 = <b>cent un</b>,
+                  201 = <b>deux cent un</b>, 202 = <b>deux cent deux</b> etc. Notice that in French there is no word
+                  for 'and' between the hundres and the tens/units, unlike in English, and that "a hundred" is just <b>cent</b>,
+                  not <s><b>un cent</b></s>.
+                </p>
+
+              </td>
+              <td width="45%" valign="top">
+
+                <h3>Thousands</h3>
+                <p>
+                  The French for '(a) thousand' is <b>mille</b>. This word never adds an <b>-s</b>, and there is never a
+                  word
+                  for 'and' between the thousands and the hundreds/tens/units. So: 1000 = <b>mille</b>, 2000 = <b>deux
+                  mille</b>,
+                  2001 = <b>deux mille un</b>, 3079 = <b>trois mille soixante-dix-neuf</b>.
+                </p>
+
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
         <div help-lang="sp">sp</div>
         <div help-lang="pt">pt</div>
       </iron-pages>
@@ -20,7 +197,6 @@
   <script>
     (function () {
       'use strict';
-
       Polymer({
         properties: {
           lang: {
