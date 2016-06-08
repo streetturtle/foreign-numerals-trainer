@@ -17,27 +17,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         display: block;
       }
-
       paper-material {
         padding: 30px;
         margin: 10px;
         background-color: #ffffff;
         text-align: center;
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
       }
-
       #number {
         font-family: Roboto;
         font-size: 3em;
       }
-
       #correctIcon {
         color: var(--paper-green-500)
       }
+      #material{
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
     </style>
-    <div style="text-align: center">
+    <div id="material">
       <paper-material elevation="4">
         <div id="number" hidden$="{{!settings.isShow}}">[[number]]</div>
         <div hidden$="[[!settings.isShowAnswer]]">[[numeral]]</div>
