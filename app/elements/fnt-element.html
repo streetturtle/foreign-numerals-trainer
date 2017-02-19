@@ -76,7 +76,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         },
 
         generateNumber: function () {
-          this.number = Math.floor((Math.random() * (this.settings.range.to + 1)) + this.settings.range.from);
+          var min = parseInt(this.settings.range.from);
+          var max = parseInt(this.settings.range.to);
+          this.number = Math.floor(Math.random() * (max - min + 1)) + min;
           this.numeral = writtenNumber(this.number, {lang: this.settings.lang});
           this.set('settings.isShowAnswer', false);
           if (this.settings.isSpeak) {
