@@ -3,7 +3,7 @@
   "description": "Convert numbers to words - their written form",
   "homepage": "https://yamadapc.github.io/js-written-number",
   "main": "./dist/written-number.js",
-  "version": "0.2.4",
+  "version": "0.5.0",
   "keywords": [
     "numbers",
     "words",
@@ -24,13 +24,13 @@
     "Pedro Tacla Yamada"
   ],
   "license": "MIT",
-  "_release": "0.2.4",
+  "_release": "0.5.0",
   "_resolution": {
     "type": "version",
-    "tag": "v0.2.4",
-    "commit": "6c91acbab37345fc124dc88560bc67fc5d0301fb"
+    "tag": "v0.5.0",
+    "commit": "20d29f5018bd9563dc1a8308b05b5f5b140b7c5e"
   },
   "_source": "https://github.com/yamadapc/js-written-number.git",
-  "_target": "^0.2.4",
+  "_target": "^0.5.0",
   "_originalSource": "written-number"
 }

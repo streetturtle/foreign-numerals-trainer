@@ -33,6 +33,7 @@
         <paper-menu class="app-menu" attr-for-selected="data-route" selected="{{route}}">
           <paper-item data-route="home">Home</paper-item>
           <paper-item data-route="help">Help</paper-item>
+          <paper-item data-route="about">About</paper-item>
         </paper-menu>
       </paper-header-panel>
 
@@ -49,6 +50,9 @@
             </section>
             <section data-route="help">
               <help-element lang="[[settings.lang]]"></help-element>
+            </section>
+            <section data-route="about">
+              <about-element></about-element>
             </section>
           </iron-pages>
         </div>
