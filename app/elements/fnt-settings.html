@@ -14,6 +14,9 @@
       paper-toggle-button{
         display: inline-block;
         float: right;
+        --paper-toggle-button-checked-button-color:  var(--paper-purple-500);
+        --paper-toggle-button-checked-bar-color:  var(--paper-purple-200);
+
       }
       #settings{
         margin: 10px;
@@ -36,8 +39,11 @@
         <paper-listbox class="dropdown-content" selected="{{settings.lang}}" attr-for-selected="value">
           <paper-item value="en">English</paper-item>
           <paper-item value="fr">French</paper-item>
-          <paper-item value="sp">Spanish</paper-item>
+          <paper-item value="es">Spanish</paper-item>
           <paper-item value="pt">Portuguese</paper-item>
+          <paper-item value="vi">Vietnamese</paper-item>
+          <paper-item value="it">Italian</paper-item>
+          <paper-item value="eo">Esperanto</paper-item>
         </paper-listbox>
       </paper-dropdown-menu>
       <div>
